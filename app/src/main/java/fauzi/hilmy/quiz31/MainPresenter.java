@@ -4,40 +4,41 @@ import fauzi.hilmy.quiz31.Base.BasePresenter;
 
 public class MainPresenter implements BasePresenter<MainView> {
     private MainView view;
+    private double result;
 
-    public void plus(Integer bil1, Integer bil2) {
-        if (bil1 == null || bil2 == null) {
-            view.onError("Number can't be null");
-        } else {
-            Integer result = bil1 + bil2;
+    public void plus(String bil1, String bil2) {
+        if (!bil1.equals("") && !bil2.equals("")) {
+            result = Double.parseDouble(bil1) + Double.parseDouble(bil2);
             view.onSuccess("Result is " + result);
+        } else {
+            view.onError("Number can't be null");
         }
     }
 
-    public void minus(Integer bil1, Integer bil2) {
-        if (bil1 == null || bil2 == null) {
-            view.onError("Number can't be null");
-        } else {
-            Integer result = bil1 - bil2;
+    public void minus(String bil1, String bil2) {
+        if (!bil1.equals("") && !bil2.equals("")) {
+            result = Double.parseDouble(bil1) - Double.parseDouble(bil2);
             view.onSuccess("Result is " + result);
+        } else {
+            view.onError("Number can't be null");
         }
     }
 
-    public void times(Integer bil1, Integer bil2) {
-        if (bil1 == null || bil2 == null) {
-            view.onError("Number can't be null");
-        } else {
-            Integer result = bil1 * bil2;
+    public void times(String bil1, String bil2) {
+        if (!bil1.equals("") && !bil2.equals("")) {
+            result = Double.parseDouble(bil1) * Double.parseDouble(bil2);
             view.onSuccess("Result is " + result);
+        } else {
+            view.onError("Number can't be null");
         }
     }
 
-    public void divides(Integer bil1, Integer bil2) {
-        if (bil1 == null || bil2 == null) {
-            view.onError("Number can't be null");
-        } else {
-            Integer result = bil1 / bil2;
+    public void divides(String bil1, String bil2) {
+        if (!bil1.equals("") && !bil2.equals("")) {
+            result = Double.parseDouble(bil1) / Double.parseDouble(bil2);
             view.onSuccess("Result is " + result);
+        } else {
+            view.onError("Number can't be null");
         }
     }
 

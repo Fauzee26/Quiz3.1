@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
     @BindView(R.id.btnclear)
     Button clear;
     private MainPresenter presenter;
-    Integer number1, number2;
+    String num1, num2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,20 +44,20 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @OnClick({R.id.btnplus, R.id.btnminus, R.id.btntimes, R.id.btndivided, R.id.btnclear})
     public void onViewClicked(View view) {
-        number1 = Integer.valueOf(edt1.getText().toString());
-        number2 = Integer.valueOf(edt2.getText().toString());
+        num1 = edt1.getText().toString();
+        num2 = edt2.getText().toString();
         switch (view.getId()) {
             case R.id.btnplus:
-                presenter.plus(number1, number2);
+                presenter.plus(num1, num2);
                 break;
             case R.id.btnminus:
-                presenter.minus(number1, number2);
+                presenter.minus(num1, num2);
                 break;
             case R.id.btntimes:
-                presenter.times(number1, number2);
+                presenter.times(num1, num2);
                 break;
             case R.id.btndivided:
-                presenter.divides(number1, number2);
+                presenter.divides(num1, num2);
                 break;
             case R.id.btnclear:
                 edt1.setText("");
